@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
   })
 
 
-  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
   use {
 	  "ThePrimeagen/harpoon",
 	  branch = "harpoon2",
@@ -46,6 +45,7 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use("nvim-treesitter/nvim-treesitter-context");
+  use "nvim-lua/plenary.nvim"
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
-
+--use {"leviticusnelson/sfdx.nvim"}
 --  use("folke/zen-mode.nvim")
 --  use("github/copilot.vim")
 --  use("eandrju/cellular-automaton.nvim")
