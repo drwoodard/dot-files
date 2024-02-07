@@ -8,39 +8,55 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'apex_ls',
+  'ltex',
   'jsonls',
   'cssls',
   'html',
   'eslint',
+  'gopls',
   'rust_analyzer',
 })
 
 -- Fix Undefined global 'vim' for Lua Language Server
 lsp.configure('lua-language-server', {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' }
-            }
-        }
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
+  }
 })
 
 -- Specify the path for the Apex language server JAR file
 local apex_jar_path = vim.fn.stdpath("config") .. '/lib/' .. 'apex-jorje-lsp.jar'
 local lspconfig = require 'lspconfig'
+
 lspconfig.apex_ls.setup {
- apex_jar_path = apex_jar_path,
- apex_enable_semantic_errors = true,
- apex_enable_completion_statistics = false,
- filetypes = {'apex'},
- root_dir = lspconfig.util.root_pattern('sfdx-project.json'),
+  apex_jar_path = apex_jar_path,
+  apex_enable_semantic_errors = true,
+  apex_enable_completion_statistics = false,
+  filetypes = {'apex'},
+  root_dir = lspconfig.util.root_pattern('sfdx-project.json'),
 }
+
+lspconfig.gopls.setup({
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
+})
 
 
 -- Configure completion with cmp
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),

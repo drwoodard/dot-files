@@ -69,6 +69,11 @@ return require('packer').startup(function(use)
 		  {'rafamadriz/friendly-snippets'},
 	  }
   }
+  -- install without yarn or npm
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  use {'zapling/plantuml.nvim', requires = {'nvim-lua/plenary.nvim'}}
 --use {"leviticusnelson/sfdx.nvim"}
 --  use("folke/zen-mode.nvim")
 --  use("github/copilot.vim")
