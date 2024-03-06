@@ -12,12 +12,19 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+--  use({
+--	  'rose-pine/neovim',
+--	  as = 'rose-pine',
+--	  config = function()
+--		  vim.cmd('colorscheme rose-pine')
+--	  end
+--  })
+
   use({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
   })
 
   use({
@@ -74,6 +81,7 @@ return require('packer').startup(function(use)
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   use {'zapling/plantuml.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  use {'laytan/cloak.nvim'}
 --use {"leviticusnelson/sfdx.nvim"}
 --  use("folke/zen-mode.nvim")
 --  use("github/copilot.vim")
