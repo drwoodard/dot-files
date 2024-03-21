@@ -2,7 +2,6 @@
 
 # Get the directory containing the script
 SCRIPT_DIR="$HOME/.config/zsh"
-echo here
 # Source all files in the same directory
 for file in "${SCRIPT_DIR}"/*.sh; do
     # Exclude the init.sh file itself
