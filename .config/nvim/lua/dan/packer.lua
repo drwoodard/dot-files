@@ -8,7 +8,6 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    --                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
@@ -40,11 +39,11 @@ return require('packer').startup(function(use)
   }
 
   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use("nvim-treesitter/nvim-treesitter-context");
   --  use("nvim-treesitter/playground")
   use("theprimeagen/refactoring.nvim")
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
-  use("nvim-treesitter/nvim-treesitter-context");
   use "nvim-lua/plenary.nvim"
 
   use {
@@ -69,8 +68,15 @@ return require('packer').startup(function(use)
       {'rafamadriz/friendly-snippets'},
     }
   }
-  -- install without yarn or npm
+  use {
+    "jonathanmorris180/salesforce.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    }
+  }
 
+  -- install without yarn or npm
   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   use {'zapling/plantuml.nvim', requires = {'nvim-lua/plenary.nvim'}}
