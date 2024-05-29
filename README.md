@@ -38,7 +38,7 @@ LSD config is in .config/lsd/config.yml
 brew install lsd
 ```
 ## Nice CAT
-(Bat)[https://github.com/sharkdp/bat] is an enhanced version of cat with syntax highlighting.
+[Bat](https://github.com/sharkdp/bat) is an enhanced version of cat with syntax highlighting.
 
 ### Zsh config
 The main .zshrc file is in the process of being modularized into .config/zsh
