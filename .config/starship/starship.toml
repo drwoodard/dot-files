@@ -1,10 +1,10 @@
 add_newline = true
 
+#[󰀵 ](bg:#C0CAF5 fg:#1A1B26)\
 
 format = """\
 [](bg:#1A1B26 fg:#C0CAF5)\
-[󰀵 ](bg:#C0CAF5 fg:#1A1B26)\
-[](fg:#C0CAF5 bg:#1A1B26)\
+$hostname[](fg:#C0CAF5 bg:#1A1B26)\
 $time\
 [](fg:#1A1B26 bg:#51597C)\
 $directory\
@@ -17,6 +17,10 @@ $conda\
 [](fg:#A0AEC0 bg:#1A1B26)\
 \n$character\
 """
+
+[hostname]
+format = '[$ssh_symbol$hostname in]($style)'
+style = "fg:#1A1B26 bg:#C0CAF5"
 
 [directory]
 #format = "[ ﱮ $path ]($style)"
