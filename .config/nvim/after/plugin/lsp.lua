@@ -6,13 +6,8 @@ lsp.preset("recommended")
 
 -- Ensure required LSP servers are installed
 lsp.ensure_installed({
-  'tsserver',
-  'apex_ls',
+  --'apex_ls',
   'ltex',
-  'jsonls',
-  'cssls',
-  'html',
-  'eslint',
   'gopls',
   'rust_analyzer',
 })
@@ -29,16 +24,16 @@ lsp.configure('lua-language-server', {
 })
 
 -- Specify the path for the Apex language server JAR file
-local apex_jar_path = vim.fn.stdpath("config") .. '/lib/' .. 'apex-jorje-lsp.jar'
+--local apex_jar_path = vim.fn.stdpath("config") .. '/lib/' .. 'apex-jorje-lsp.jar'
 local lspconfig = require 'lspconfig'
 
-lspconfig.apex_ls.setup {
-  apex_jar_path = apex_jar_path,
-  apex_enable_semantic_errors = true,
-  apex_enable_completion_statistics = false,
-  filetypes = {'apex'},
-  root_dir = lspconfig.util.root_pattern('sfdx-project.json'),
-}
+--lspconfig.apex_ls.setup {
+--  apex_jar_path = apex_jar_path,
+--  apex_enable_semantic_errors = true,
+--  apex_enable_completion_statistics = false,
+--  filetypes = {'apex'},
+--  root_dir = lspconfig.util.root_pattern('sfdx-project.json'),
+--}
 
 lspconfig.gopls.setup({
   settings = {
