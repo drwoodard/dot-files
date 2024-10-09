@@ -1,8 +1,7 @@
 add_newline = true
 
 format = """\
-$hostname :(fg:#C0CAF5 bg:#1A1B26)\
-$os(fg:#C0CAF5)\
+$hostname->$os(fg:#C0CAF5)\
 $directory\
 $git_branch\
 $git_status\
@@ -66,7 +65,7 @@ style = ""
 format = '[ $ssh_symbol$hostname]($style)'
 
 [os]
-format = "[ $name $version]()"
+format = "[$name $version]()"
 #style = ""
 disabled = false
 
