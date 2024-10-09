@@ -1,3 +1,3 @@
 require("dan.remap")
 require("dan.set")
-require("dan.lazy")
+require("dan.lazy_init")
