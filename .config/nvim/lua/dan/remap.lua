@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Map ]tt to run sfdx apex:run:test
 vim.keymap.set('n', ']tt', [[:!sfdx apex:run:test -y -c -r human -w 5 -t "%:t:r"]]..'"', { silent = true, noremap = true })
 
