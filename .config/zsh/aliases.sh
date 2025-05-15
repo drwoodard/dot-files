@@ -32,3 +32,7 @@ fi
 #Google Cloud
 alias gssh="clear&gcloud cloud-shell ssh"
 
+#snowsql
+if command_exists snowsql; then
+ alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
+fi
