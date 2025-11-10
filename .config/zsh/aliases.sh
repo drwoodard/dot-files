@@ -29,6 +29,15 @@ if command_exists bat; then
   alias cat='bat'
 fi
 
+
+if command_exists wl-copy; then
+  alias pbcopy='wl-copy'
+fi
+
+if command_exists wl-paste; then
+  alias pbpaste='wl-paste'
+fi
+
 #Google Cloud
 alias gssh="clear&gcloud cloud-shell ssh"
 
