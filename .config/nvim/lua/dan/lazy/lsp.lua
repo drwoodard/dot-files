@@ -37,11 +37,7 @@ return {
     -- Mason setup
     require("mason").setup({})
     require("mason-lspconfig").setup({
-<<<<<<< HEAD
       ensure_installed = { "lua_ls",  "rust_analyzer", "ltex" },
-=======
-      ensure_installed = { "lua_ls", "gopls", "rust_analyzer", "ltex" },
->>>>>>> origin/lazy
       handlers = {
         lsp_zero.default_setup, -- default handler for most servers
 
